@@ -1,0 +1,11 @@
+    1  ls
+    2  cd Documents/
+    3  ls
+    4  cd ..
+    5  ls
+    6  cd os_
+    7  cd os_lab/
+    8  cd week01/
+    9  ls
+   10  cat ex1.txt
+   11  history > ex2.txt
