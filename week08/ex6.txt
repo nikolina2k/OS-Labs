@@ -1,0 +1,3 @@
+Task: A machine has 16-bit virtual addresses. Pages are 8 KB. How many entries are needed for a single-level linear page table?
+8*1024=2^13 (there is 13 bit offset)
+(2^16)/(2^13) = 2^3 (entries needed)

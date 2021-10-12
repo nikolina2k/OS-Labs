@@ -1,0 +1,1 @@
+Physical address is an address of physical memory, or more specifically, a hardware address. Physical address is represented as a binary number on the bus. On the other hand, virtual address is a binary number in virtual memory and might sometimes be the same as physical address.
