@@ -2,22 +2,22 @@
 #define N 5
 #define M 3
 typedef struct {
-    int C[M];
-    int R[M];
+    int C[3];
+    int R[3];
     int pid;
     int status;
 } process;
 
-process p[N];
-int E[M];
-int A[M];
+process p[5];
+int E[3];
+int A[3];
 
 int check() {
-    for(int i = 0; i < N; ++i) {
+    for(int i = 0; i < 5; ++i) {
         if(p[i].status == 1)
             continue;
         int ok = 1;
-        for(int j = 0; j < M; ++j)
+        for(int j = 0; j < 3; ++j)
             if(p[i].R[j] > A[j]) {
                 ok = 0;
                 break;
@@ -29,7 +29,7 @@ int check() {
 }
 
 void clear(int id) {
-    for(int i = 0; i < M; ++i) {
+    for(int i = 0; i < 3; ++i) {
         A[i] += p[id].C[i];
         p[id].C[i] = p[id].R[i] = 0;
         p[id].status = 1;
@@ -39,17 +39,17 @@ void clear(int id) {
 void print(int status) {
     printf(status ? "\nResult:\n\n" : "\nState:\n\n");
     printf("E: {");
-    for (int j = 0; j < M; ++j) {
+    for (int j = 0; j < 3; ++j) {
         printf("%d", E[j]);
-        printf(j == M -1 ? ")\n" : ", ");
+        printf(j == 3 -1 ? ")\n" : ", ");
     }
     printf("A: (");
-    for (int j = 0; j < M; ++j) {
+    for (int j = 0; j < 3; ++j) {
         printf("%d", A[j]);
-        printf(j == M - 1 ? "}\n" : ", ");
+        printf(j == 3 - 1 ? "}\n" : ", ");
     }
 
-    for (int i = 0; i < N; ++i) {
+    for (int i = 0; i < 5; ++i) {
         printf("Process #%d ", p[i].pid);
         if (status) {
             if (p[i].status == 0) {
@@ -60,9 +60,9 @@ void print(int status) {
         } else {
             if (p[i].status == 0) {
                 printf("is in progress. Requires: (");
-                for (int j = 0; j < M; ++j) {
+                for (int j = 0; j < 3; ++j) {
                     printf("%d", p[i].R[j]);
-                    printf(j == M - 1 ? ")\n" : ", ");
+                    printf(j == 3 - 1 ? ")\n" : ", ");
                 }
             } else {
                 printf("is terminated\n");
@@ -73,21 +73,21 @@ void print(int status) {
 
 int main(int argc, char **argv) {
     FILE *in = fopen("input_dl.txt", "r");
-    for(int i = 0; i < M; ++i)
+    for(int i = 0; i < 3; ++i)
         fscanf(in, "%d", &E[i]);
-    for(int i = 0; i < M; ++i)
+    for(int i = 0; i < 3; ++i)
         fscanf(in, "%d", &A[i]);
-    for(int i = 0; i < N; ++i) {
+    for(int i = 0; i < 5; ++i) {
         p[i].pid = i;
         p[i].status = 0;
     }
-    for(int i = 0; i < N; ++i) {
-        for(int j = 0; j < M; ++j) {
+    for(int i = 0; i < 5; ++i) {
+        for(int j = 0; j < 3; ++j) {
             fscanf(in, "%d", &p[i].C[j]);
         }
     }
-    for(int i = 0; i < N; ++i) {
-        for(int j = 0; j < M; ++j) {
+    for(int i = 0; i < 5; ++i) {
+        for(int j = 0; j < 3; ++j) {
             fscanf(in, "%d", &p[i].R[j]);
         }
     }

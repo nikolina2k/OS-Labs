@@ -1,9 +1,9 @@
 Prevention:
-The program is designed to have no deadlocks. It is the most difficult approach to implement, practically impossible to reach, but it offers the best performance.
+Designing the program to have no deadlocks. The approach is almost impossible to implement but it offers best performance.
 
 Recovery:
-This strategy tries to solve the occurred deadlock. The simplest way to implement is to kill a process. But such approach is dangerous and unstable.
+Solving the occurred deadlock by killing the process for example. The approach is dangerous and unstable.
 
 Avoidance:
-This strategy is the safest option. It is easier to implement than prevention strategy, but worse in performance. The idea lies in prediction of a deadlock and manipulation of resources. Such precalculation results in relatively poor performance.
+It is the safest strategy and the easiest to implement but is worse in performance. The idea is in the prediction of the deadlock which results in poor performance.
 
