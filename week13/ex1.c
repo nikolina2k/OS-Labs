@@ -1,6 +1,4 @@
 #include <stdio.h>
-#define N 5
-#define M 3
 typedef struct {
     int C[3];
     int R[3];
